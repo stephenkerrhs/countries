@@ -1,10 +1,9 @@
 # encoding: utf-8
 
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'spec_helper'
 require File.expand_path('../../lib/countries/mongoid', __FILE__)
 
 describe 'Mongoid support' do
-
   let(:britain) { ISO3166::Country.new('GB') }
   context 'instance methods' do
     describe 'mongoize' do
@@ -38,7 +37,6 @@ describe 'Mongoid support' do
       it 'should store nil given a bad alpha2' do
         expect(ISO3166::Country.mongoize('bad_alpha_2')).to eql nil
       end
-
     end
 
     describe 'demongoize' do

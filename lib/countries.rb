@@ -1,10 +1,8 @@
+require "unicode_utils/downcase"
+require "sixarm_ruby_unaccent"
+
 require 'countries/version'
 
-require 'iso3166'
-require 'countries/mongoid' if defined?(Mongoid)
+require 'countries/iso3166'
 
-class Country < ISO3166::Country
-  def to_s
-    name
-  end
-end
+require 'countries/mongoid' if defined?(Mongoid)
